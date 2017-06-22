@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="devSocial" lang="en">
 
 <head>
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>DevMtin</title>
+	<link rel="stylesheet" href="./style.css" type="text/css"/>
+	<link rel="stylesheet" href="views/friendProfile/friendProfile.css" type="text/css"/>
+	<link rel="stylesheet" href="views/friendsView/friendsView.css" type="text/css"/>
+	<link rel="stylesheet" href="views/initialView/initialView.css" type="text/css"/>
+	<link rel="stylesheet" href="views/landingPage/landingPage.css" type="text/css"/>
+	<link rel="stylesheet" href="views/searchFriends/searchFriends.css" type="text/css"/>
+	<link rel="stylesheet" href="views/updateProfile/updateProfile.css" type="text/css"/>
+	<title>DevSocial</title>
 </head>
 
 <body>
 
-  
+	<ui-view></ui-view>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/services/mainSrv.js"></script>
+	<script src="views/friendProfile/friendProfileCtrl.js"></script>
+	<script src="views/friendsView/friendsViewCtrl.js"></script>
+	<script src="views/initialView/initialCtrl.js"></script>
+	<script src="views/landingPage/landingPageCtrl.js"></script>
+	<script src="views/searchFriends/searchFriendsCtrl.js"></script>
+	<script src="views/updateProfile/updateProfileCtrl.js"></script>
 </body>
 </html>
