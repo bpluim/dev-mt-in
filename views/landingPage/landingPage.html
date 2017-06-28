@@ -5,7 +5,14 @@
 			<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/6983-200.png" class="searchButton"/>
 			<h3 ui-sref='initialView'>DevMountain</h3>
 			<!--Magnifying glass-->
-			<img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/>
+			<!--<img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/>-->
+			<div class="dropdown">
+				<button onclick="dropDown()" class="dropbtn"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/></button>
+				<div id="myDropdown" class="dropdown-content">
+					<p ui-sref="landingPage">My Profile</p>
+					<p ui-sref="updateProfile">Update Profile</p>
+				</div>
+			</div>
 		</header>
 		
 		<hr />
@@ -27,8 +34,8 @@
 			</div>-->
 
             <div class='left'>
-                <h1 style="text-align: left">Chris</h1>
-                <h1 style="text-align: right">Johnson</h1>
+                <p class="firstName">Chris</p>
+                <p class="lastName">Johnson</p>
 
                 <h2>Some awesome tagline about you</h2>
 

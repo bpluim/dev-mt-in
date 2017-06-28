@@ -5,7 +5,14 @@
 			<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/6983-200.png" class="searchButton"/>
 			<h3 ui-sref='initialView'>DevMountain</h3>
 			<!--Magnifying glass-->
-			<img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/>
+			<!--<img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/>-->
+			<div class="dropdown">
+				<button onclick="dropDown()" class="dropbtn"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/></button>
+				<div id="myDropdown" class="dropdown-content">
+					<p ui-sref="landingPage">My Profile</p>
+					<p ui-sref="updateProfile">Update Profile</p>
+				</div>
+			</div>
 		</header>
 		
 		<hr />
@@ -28,8 +35,8 @@
 			</div>-->
 
 			<div class='left'>
-                <h1 style="text-align: left">Chris</h1>
-                <h1 style="text-align: right">Johnson</h1>
+                <p class="firstName">Chris</p>
+                <p class="lastName">Johnson</p>
 
                 <h2>Some awesome tagline about you</h2>
 
@@ -40,7 +47,20 @@
 			
 			<!--Right Column-->
 			<div class="right">
-				<img class="logo" src="./images/triangles.jpg"></img>
+				<div style="display: flex; justify-content: space-around;">
+					<input style="width: 83%; height: 30px; margin-bottom: 10px;" placeholder="Search for Friends" ng-model="friends.name"></input>
+					<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/6983-200.png" class="searchFriendsButton" style="text-align: right; margin-left: 5%;"/>
+					<!--<button style="width: 15%; margin-bottom: 10px;"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/6983-200.png" class="searchFriendsButton" ui-sref="searchButton" style="text-align: right; margin-left: 10%;"/></button>-->
+				</div>
+				<div style="display: flex; flex-wrap: wrap; overflow: scroll; width: 100%; margin-left: 5%; height: 100%;">
+					<div ng-repeat='friend in friendsList | filter: friends' ng-source="{{friend.profileURL}}">
+							<!--<p>{{friend.name}}</p>-->
+
+						<div style="">
+							<img ng-src="{{friend.profileUrl}}" style="width: 200px; height: calc(100% / 3);"></img>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<hr />

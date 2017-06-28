@@ -2,10 +2,17 @@
 		<header>
 			<!--Left Arrow Image
 			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpN381iKtplmNq7YepCtfIGJZJ1kE-U8CztH7fW-HaOVuotVZp9g" class="backButton"/>-->
-			<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/6983-200.png" class="searchButton"/>
+			<img ui-sref="searchFriends" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6983-200.png" class="searchButton"/>
 			<h3 ui-sref='initialView'>DevMountain</h3>
 			<!--Magnifying glass-->
-			<img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/>
+			<!--<img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/>-->
+			<div class="dropdown">
+				<button onclick="dropDown()" class="dropbtn"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/></button>
+				<div id="myDropdown" class="dropdown-content">
+					<p ui-sref="landingPage">My Profile</p>
+					<p ui-sref="updateProfile">Update Profile</p>
+				</div>
+			</div>
 		</header>
 		
 		<hr />
@@ -18,12 +25,12 @@
 					<br />
 					Add Some Info So Friends Can Find You
 				</h3>
-				<input type="text" placeholder="Full Name" class="initialViewInput">
-				<input type="text" placeholder="Tagline" class="initialViewInput">
-				<input type="text" placeholder="Profile Image URL" class="initialViewInput">
-				<input type="text" placeholder="Bio" class="initialViewInput" id="bio">
+				<input type="text" placeholder="Full Name" class="initialViewInput" ng-model="Name">
+				<input type="text" placeholder="Tagline" class="initialViewInput" ng-model="tagline">
+				<input type="text" placeholder="Profile Image URL" class="initialViewInput" ng-src="">
+				<input type="text" placeholder="Bio" class="initialViewInput" id="bio" ng-model="bio">
 				
-				<button class="saveChanges">Save Changes</button>	
+				<button class="saveChanges" ui-sref="landingPage">Save Changes</button>	
 			</div>
 			<!--Right Column-->
 			<div class="right">

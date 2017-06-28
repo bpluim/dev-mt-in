@@ -2,10 +2,17 @@
 		<header>
 			<!--Left Arrow Image
 			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpN381iKtplmNq7YepCtfIGJZJ1kE-U8CztH7fW-HaOVuotVZp9g" class="backButton"/>-->
-			<img src="https://d30y9cdsu7xlg0.cloudfront.net/png/6983-200.png" class="searchButton"/>
+			<img ui-sref="searchFriends" src="https://d30y9cdsu7xlg0.cloudfront.net/png/6983-200.png" class="searchButton"/>
 			<h3 ui-sref='initialView'>DevMountain</h3>
 			<!--Magnifying glass-->
-			<img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/>
+			<!--<img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/>-->
+			<div class="dropdown">
+				<button onclick="dropDown()" class="dropbtn"><img src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/menu-alt-512.png" class="hamburger"/></button>
+				<div id="myDropdown" class="dropdown-content">
+					<p ui-sref="landingPage">My Profile</p>
+					<p ui-sref="updateProfile">Update Profile</p>
+				</div>
+			</div>
 		</header>
 		
 		<hr />
@@ -28,8 +35,8 @@
 			</div>-->
 
 			<div class='left'>
-                <h1 style="text-align: left">Chris</h1>
-                <h1 style="text-align: right">Johnson</h1>
+                <p class="firstName">Chris</p>
+                <p class='lastName'>Johnson</p>
 
                 <h2>Some awesome tagline about you</h2>
 
@@ -40,13 +47,19 @@
 			
 			<!--Right Column-->
 			<div class="right">
-				<img class="logo" src="./images/triangles.jpg"></img>
+				
+				<input type="text" placeholder="Full Name" class="initialViewInput" ng-model="Name">
+				<input type="text" placeholder="Tagline" class="initialViewInput" ng-model="tagline">
+				<input type="text" placeholder="Profile Image URL" class="initialViewInput" ng-src="">
+				<input type="text" placeholder="Bio" class="initialViewInput" id="bio" ng-model="bio">
+				
+				<button class="saveChanges" ui-sref="landingPage">Save Changes</button>	
 			</div>
 		</div>
 		<hr />
 		<footer>
 			<div class='footerClickers' ui-sref="friendsView">View Friends</div>
 			<div class='footerClickers' ui-sref="searchFriends">Find Friends</div>
-			<div class='footerClickers' ui-sref="updateProfile">Update Profile</div>
+			<div class='footerClickers' id="footerUnderline" ui-sref="updateProfile">Update Profile</div>
 		</footer>
 	</div>
